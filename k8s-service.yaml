@@ -1,0 +1,12 @@
+apiVersion: v1 # Kubernetes api version
+kind: Service # Kubernetes resource kind we are creating
+metadata:
+  name: springboot-k8s-service
+spec:
+  selector:
+    app: spring-boot-k8s
+  ports:
+    - protocol: "TCP"
+      port: 8080
+      targetPort: 8080
+  type: NodePort # Type of service
